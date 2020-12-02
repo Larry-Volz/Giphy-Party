@@ -12,28 +12,28 @@
 
 <body>
   <div class="container">
-   <div class="jumbotron display-3 bg-primary">Giphy Party!</div>
+    <div class="jumbotron display-3 bg-primary">Giphy Party!</div>
   </div>
-  <div class="row">
-    <div class=" form-group col-12">
-      <div class = "col-sm-6 col-md-4 col-lg-2">
-        <input type="text" class ="form-control" id="searchTopic" placeholder="Gif to search for?">
-      </div>
-      <div class = "col-sm-6 col-md-4 col-lg-2">
-        <button class = "btn btn-dark text-white" id="searchButton">Search Giphy!</button>
-      </div>
-      <div>
-      <button>Delete!</button>
-    </div>
+  <div class="container">
     <div class="row">
-      <div id="displayMemes" class="col-sm-6 col-md-4 col-xl-3">
-        
-
+      <!-- <div class=" form-group"> -->
+        <div class = "col-sm">
+          <input type="text" class ="form-control" id="searchTopic" placeholder="Gif to search for?">
+        </div>
+        <div class = "col-sm">
+          <button class = "btn btn-dark text-white" id="searchButton">Search Giphy!</button>
+        </div>
+        <div class = "col-sm">
+          <button class = "btn btn-danger text-white" id ="delBtn">Delete!</button>
+        </div>
       </div>
     </div>
+        <div class="row">
+      <div id="displayMemes" class="col-sm-6 col-md-4 col-xl-3"></div>
     </div>
+    
+    
   </div>
-
 
 <!-- ---------------------------- INCLUDES -------------------------------------------------->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

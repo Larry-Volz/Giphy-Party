@@ -20,6 +20,7 @@ function getBtn(){
         res = await searchGiphy($("#searchTopic").val());
         const firstGif = res.data.data[0].images.original.url;
         console.log(firstGif);
+        gifToPage(firstGif);
         return firstGif;
         
     });
@@ -35,16 +36,29 @@ function gifToPage(gif){
 
     //create img tag
     const image = document.createElement('img')
-    // const image = $("<img>").src=gif;
 
     //add src to imag tag
     image.src  = gif;
 
     //add to div
     document.querySelector('#displayMemes').appendChild(image)
-    // $("#displayMemes").append(image);
+
+   
 }
+
+
+function deleteGifs(){
+    // const delBtn = document.querySelector('#delBtn');
+    $('#delBtn').on("click", () => {
+        const memes = document.querySelectorAll('img');
+        memes.forEach(element => {
+            element.remove();
+        });
+    });
+
+}
+
 
 let gif = getBtn();
 
-gifToPage(gif);
+deleteGifs();
