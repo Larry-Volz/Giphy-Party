@@ -15,16 +15,14 @@ xhr.done(function(data) { console.log("success got data", data); });
 
 */
 
-
-$("#searchButton").on("click", function(evt) {
-    res = searchGiphy($("#searchTopic").val());
-    console.log(res);
-    console.log(res.data[0].images.original.url,)
- });
-
-
-
-
+async function getBtn(){
+    $("#searchButton").on("click", function(evt) {
+        res = await searchGiphy($("#searchTopic").val());
+        console.log(res);
+        console.log(res.data.data[0].images.original.url,)
+        
+    });
+};
 
  async function searchGiphy(searchString) {
     const str = `http://api.giphy.com/v1/gifs/search?q=${searchString}&api_key=Mpo1SYtELMIvSDUUDEjn1wCqKF5Jnixi&limit=5`
@@ -33,3 +31,4 @@ $("#searchButton").on("click", function(evt) {
 }
 
 
+getBtn();
