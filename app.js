@@ -15,11 +15,12 @@ xhr.done(function(data) { console.log("success got data", data); });
 
 */
 
-async function getBtn(){
-    $("#searchButton").on("click", function(evt) {
+function getBtn(){
+    $("#searchButton").on("click", async function(evt) {
         res = await searchGiphy($("#searchTopic").val());
-        console.log(res);
-        console.log(res.data.data[0].images.original.url,)
+        const firstGif = res.data.data[0].images.original.url;
+        console.log(firstGif);
+        return firstGif;
         
     });
 };
@@ -30,5 +31,20 @@ async function getBtn(){
     return res;
 }
 
+function gifToPage(gif){
 
-getBtn();
+    //create img tag
+    const image = document.createElement('img')
+    // const image = $("<img>").src=gif;
+
+    //add src to imag tag
+    image.src  = gif;
+
+    //add to div
+    document.querySelector('#displayMemes').appendChild(image)
+    // $("#displayMemes").append(image);
+}
+
+let gif = getBtn();
+
+gifToPage(gif);
