@@ -12,24 +12,28 @@
 
 <body>
   <div class="container">
-    <div class="jumbotron display-3 bg-primary">Giphy Party!</div>
-  </div>
-  <div class="container">
     <div class="row">
+      <h1 class=" col text-center row display-3  bg-primary p-3 m-2 border rounded">Giphy Party!</h1>
+    </div>
+  </div>
+  <div class="container ">
+    <div class="row d-flex justify-content-center ">
       <!-- <div class=" form-group"> -->
-        <div class = "col-sm">
+        <div class="col "></div>
+        <div class = "col-sm-3 ">
           <input type="text" class ="form-control" id="searchTopic" placeholder="Gif to search for?">
         </div>
-        <div class = "col-sm">
-          <button class = "btn btn-dark text-white" id="searchButton">Search Giphy!</button>
+        <div class = "col-sm-3 ">
+          <button class = "btn btn-block btn-dark text-white " id="searchButton">Search Giphy!</button>
         </div>
-        <div class = "col-sm">
-          <button class = "btn btn-danger text-white" id ="delBtn">Delete!</button>
+        <div class = "col-sm-3 ">
+          <button class = "btn btn-danger btn-block text-white" id ="delBtn">Remove Images!</button>
         </div>
+        <div class="col"></div>
       </div>
     </div>
         <div class="row">
-      <div id="displayMemes" class="col-sm-6 col-md-4 col-xl-3"></div>
+      <span id="displayMemes" class="col-sm-6 col-md-4 col-xl-3 my-3"></span>
     </div>
     
     

@@ -21,6 +21,8 @@ function getBtn(){
         const firstGif = res.data.data[0].images.original.url;
         console.log(firstGif);
         gifToPage(firstGif);
+        // $("#searchTopic").val() ="";
+        document.querySelector('#searchTopic').value = "";
         return firstGif;
         
     });
