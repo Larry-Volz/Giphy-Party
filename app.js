@@ -42,7 +42,7 @@ function getBtn(){
 };
 
  async function searchGiphy(searchString) {
-    const str = `http://api.giphy.com/v1/gifs/search?q=${searchString}&api_key=Mpo1SYtELMIvSDUUDEjn1wCqKF5Jnixi&limit=5`
+    const str = `https://api.giphy.com/v1/gifs/search?q=${searchString}&api_key=Mpo1SYtELMIvSDUUDEjn1wCqKF5Jnixi&limit=5`
     const res = await axios.get(str);
     return res;
 }
