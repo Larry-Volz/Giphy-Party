@@ -51,13 +51,13 @@ function gifToPage(gif){
 
     //create img tag
     const image = document.createElement('img')
+    
+    //add bootstrap class to put into columns
+    // image.classList.add("col-md-4 col-12 mb-4")
+    $(image).addClass("col-xs-12 col-sm-4");
 
     //add src to imag tag
     image.src  = gif;
-
-    //add bootstrap class to put into columns
-    image.classList.add("col-md-3")
-    // $(image).addClass("col-sm-6");
 
     //add to div
     document.querySelector('#displayMemes').appendChild(image)
