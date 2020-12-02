@@ -19,7 +19,20 @@ function getBtn(){
     $("#searchButton").on("click", async function(evt) {
         res = await searchGiphy($("#searchTopic").val());
         const firstGif = res.data.data[0].images.original.url;
-        console.log(firstGif);
+
+        //later learn to submit with enter or a button press
+        // if(evt.target instanceof HTMLButtonElement) {
+        //     console.log(`target: ${evt.target}`);
+        // }
+
+        /*
+        NOTE: In Springboard's solution they did a submit instead of button and 
+        $().on("submit") which has the advantage that an enter or a click both
+        trigger the event.  Just have to rememver to do an evt.preventDefault()
+        to prevenet screen refreshing if I do an .on("submit")
+        */
+
+
         gifToPage(firstGif);
         // $("#searchTopic").val() ="";
         document.querySelector('#searchTopic').value = "";
@@ -41,6 +54,10 @@ function gifToPage(gif){
 
     //add src to imag tag
     image.src  = gif;
+
+    //add bootstrap class to put into columns
+    image.classList.add("col-md-3")
+    // $(image).addClass("col-sm-6");
 
     //add to div
     document.querySelector('#displayMemes').appendChild(image)
